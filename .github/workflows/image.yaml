@@ -28,8 +28,8 @@ jobs:
       - name: Build and push images
         run: |
           for service in adservice checkoutservice currencyservice emailservice frontend loadgenerator paymentservice productcatalogservice recommendationservice; do
-            cd src
-            cd $service
+           
+            cd src/$service
             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/$service:latest -f Dockerfile . --push
             cd ..
           done
