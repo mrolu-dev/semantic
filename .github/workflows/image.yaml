@@ -67,25 +67,39 @@ jobs:
 
    
           
-      - name: Build paymentservice
-        run: |
-            cd src/paymentservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/paymentservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build paymentservice
+      #   run: |
+      #       cd src/paymentservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/paymentservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
       
-      - name: Build productcatalogservice
-        run: |
-            cd src/productcatalogservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/productcatalogservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build productcatalogservice
+      #   run: |
+      #       cd src/productcatalogservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/productcatalogservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
 
-      - name: Build recommendationservice
+      # - name: Build recommendationservice
+      #   run: |
+      #       cd src/recommendationservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/recommendationservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
+
+    
+      # - name: Build adservice
+      #   run: |
+      #       cd src/adservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/adservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
+      - name: Build loadgenerator
         run: |
-            cd src/recommendationservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/recommendationservice:latest -f Dockerfile . --push
-            cd ..
+             cd src/loadgenerator
+             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/loadgenerator:latest -f Dockerfile . --push
+             cd ..
         if: success()
 
       - name: Build cartservice
@@ -93,17 +107,5 @@ jobs:
             cd src/cartservice/src
             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/cartservice:latest -f Dockerfile . --push
             cd ..
-        if: success()
-      - name: Build adservice
-        run: |
-            cd src/adservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/adservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
-      - name: Build loadgenerator
-        run: |
-             cd src/loadgenerator
-             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/loadgenerator:latest -f Dockerfile . --push
-             cd ..
         if: success()
 
