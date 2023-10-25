@@ -3,7 +3,7 @@ name: Build and Push Microservices
 on:
   push:
     branches:
-      - main  # Adjust the branch you want to trigger this workflow
+      - master  # Adjust the branch you want to trigger this workflow
 
 jobs:
   build_and_push:
