@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #FROM python:3.11.1-slim@sha256:33a1008485e1a2dc565be79ece483b240cbc4d6266d6144a57a5a9965ede9bbf as base
-FROM python:3.11.1@sha256:33a1008485e1a2dc565be79ece483b240cbc4d6266d6144a57a5a9965ede9bbf as base
+FROM python:3.11.1-slim as base
 FROM base as builder
 
 COPY requirements.txt .
