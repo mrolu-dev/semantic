@@ -19,7 +19,7 @@ FROM base as builder
 COPY requirements.txt .
 RUN pip install --upgrade pip
 #RUN pip install --prefix="/install" -r requirements.txt
-RUN pip install --no-warn-script-location --prefix="/install" -r requirements.txt
+RUN pip install --no-warn-script-location  -r requirements.txt
 FROM base
 
 WORKDIR /loadgen
