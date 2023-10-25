@@ -37,40 +37,35 @@ jobs:
       
 
 
-      - name: Build checkoutservice
-        run: |
-            cd src/checkoutservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/checkoutservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build checkoutservice
+      #   run: |
+      #       cd src/checkoutservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/checkoutservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
 
-      - name: Build currencyservice
-        run: |
-            cd src/currencyservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/currencyservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build currencyservice
+      #   run: |
+      #       cd src/currencyservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/currencyservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
 
-      - name: Build emailservice
-        run: |
-            cd src/emailservice
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/emailservice:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build emailservice
+      #   run: |
+      #       cd src/emailservice
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/emailservice:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
 
-      - name: Build frontend
-        run: |
-            cd src/frontend
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/frontend:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+      # - name: Build frontend
+      #   run: |
+      #       cd src/frontend
+      #       docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/frontend:latest -f Dockerfile . --push
+      #       cd ..
+      #   if: success()
 
-      - name: Build loadgenerator
-        run: |
-            cd src/loadgenerator
-            docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/loadgenerator:latest -f Dockerfile . --push
-            cd ..
-        if: success()
+   
           
       - name: Build paymentservice
         run: |
@@ -105,5 +100,10 @@ jobs:
             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/adservice:latest -f Dockerfile . --push
             cd ..
         if: success()
-
+      - name: Build loadgenerator
+        run: |
+             cd src/loadgenerator
+             docker buildx build --platform linux/amd64,linux/arm64 -t ristabel/loadgenerator:latest -f Dockerfile . --push
+             cd ..
+        if: success()
 
